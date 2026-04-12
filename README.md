@@ -1,139 +1,139 @@
-🚀 Smart Dev Lab (Android + Debian + n8n + Node.js)
+# 🚀 Smart Dev Lab — Portable Linux Automation & Development Environment
 
-A portable Linux-based development and automation environment running on Android using Termux + Debian (proot).
+A portable Linux-based development and automation system running on Android using Termux and Debian.
 
-This project demonstrates how a mobile device can be transformed into a functional development workstation capable of running backend services, automation workflows, and a full IDE.
-
----
-
-📌 Overview
-
-This repository showcases a mid-weight development setup designed for:
-
-- Backend development (Node.js)
-- Workflow automation (n8n)
-- Linux system usage (Debian on Termux)
-- Portable coding environment (VS Code in browser)
+This project demonstrates how a mobile device can be transformed into a functional development lab capable of running backend services, automation workflows, and a full IDE.
 
 ---
 
-🧠 Architecture
+## 📌 Overview
 
-Client Request → n8n Webhook → Node.js API → Response
+This repository combines:
 
-- Node.js → Handles computation (Calculator API)
-- n8n → Handles automation & orchestration
-- Debian (proot) → Provides runtime environment
+- 🐧 Debian Linux (proot environment)
+- 🔁 n8n automation workflows
+- ⚡ Node.js backend API
+- 🧑‍💻 VS Code (code-server)
+
+It also includes a simple integrated system where automation workflows interact with backend services.
 
 ---
 
-⚙️ Features
+## 🧠 Architecture
+
+```
+Client → n8n Webhook → Node.js API → Response
+```
+
+### Components
+
+| Component | Role |
+|---|---|
+| **Node.js API** | Handles computation (logic) |
+| **n8n** | Automation & orchestration |
+| **Debian (Termux)** | Runtime environment |
+| **VS Code** | Development interface |
+
+---
+
+## ⚙️ Features
 
 - 📱 Runs on Android (No Root Required)
-- 🐧 Debian GNU/Linux environment
-- 🖥️ XFCE Desktop via VNC
-- 🔁 n8n self-hosted automation
-- 🧑‍💻 VS Code (code-server)
-- ⚡ Node.js backend development
-- 🔌 API + Automation integration
+- 🐧 Debian environment via Termux
+- 🖥️ XFCE Desktop (VNC-based)
+- 🔁 Self-hosted n8n workflows
+- ⚡ Node.js API service
+- 🧑‍💻 VS Code (browser-based IDE)
+- 🔗 API + automation integration
 
 ---
 
-🧪 Included Projects
+## 🧪 Included Projects
 
-🔹 Calculator API (Node.js)
+### 🔹 Calculator API (Node.js)
 
-- REST-based API
-- Supports: add, sub, mul, div
-- Structured JSON response
-- Input handling
+- REST-based endpoint
+- Supports add, subtract, multiply, divide
+- Structured JSON responses
 
----
-
-🔹 n8n Workflow
+### 🔹 n8n Workflow
 
 - Webhook-triggered automation
 - Calls local API
-- Returns computed result
+- Returns processed result
 
 ---
 
-📸 Screenshots
+## 📂 Project Structure
 
-Screenshots demonstrate:
-
-- Debian XFCE desktop running on Android
-- n8n automation workflow
-- VS Code (code-server) environment
-
----
-
-⚠️ System Requirements
-
-This setup is not lightweight.
-
-✅ Recommended:
-
-- 6 GB RAM or higher
-- Sufficient storage (10GB+ free space recommended)
-- Mid-range to high-end Android device
-
-❌ Not Recommended:
-
-- 2 GB / 3 GB RAM devices
-- Low-end processors
-- Limited storage environments
+```
+smart-dev-lab/
+├── setup/
+├── apps/
+│   ├── calculator-api/
+│   └── n8n-workflows/
+├── scripts/
+├── screenshots/
+└── docs/
+```
 
 ---
 
-⚠️ Limitations
+## ⚠️ System Requirements
+
+This setup is moderately heavy and not suitable for low-end devices.
+
+**Recommended:**
+
+- ✅ 6 GB RAM or higher
+- ✅ Mid-range to high-end device
+- ✅ Sufficient storage (5–10 GB free)
+
+**Not Recommended:**
+
+- ❌ 2 GB / 3 GB RAM devices
+- ❌ Low-end processors
+- ❌ Limited storage environments
+
+---
+
+## ⚠️ Limitations
 
 - No Docker support
 - No systemd
 - No GPU acceleration
-- Background processes may stop (Android limitation)
+- Background services may stop due to Android constraints
 - Not intended for production deployment
 
 ---
 
-🎯 Use Cases
+## 🎯 Use Cases
 
-- Learning Linux in a practical way
-- Building automation workflows (n8n)
+- Learning Linux in a practical environment
+- Building automation workflows with n8n
 - Developing backend APIs
-- Portable development environment
+- Portable development setup
 
 ---
 
-📂 Project Structure
+## 📸 Screenshots
 
-smart-dev-lab/
-├── setup/
-├── apps/
-├── scripts/
-├── screenshots/
-├── docs/
+Screenshots demonstrate:
 
----
-
-🔑 Key Takeaways
-
-- System integration (API + automation)
-- Practical Linux usage on mobile
-- Development under constrained environments
-- Clean project structuring
+- Debian XFCE desktop running on Android
+- n8n workflow execution
+- VS Code development environment
 
 ---
 
-🔮 Future Improvements
+## 🔮 Future Improvements
 
 - VPS deployment
 - Automated setup scripts
-- Advanced workflows
-- Performance optimizations
+- Advanced workflow integrations
 
 ---
 
-📜 License
+## 📜 License
 
 MIT License
