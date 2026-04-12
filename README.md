@@ -1,21 +1,19 @@
 🚀 Smart Dev Lab (Android + Debian + n8n + Node.js)
 
-A portable Linux-based development and automation environment built on Android using Termux and Debian.
+A portable Linux-based development and automation environment running on Android using Termux + Debian (proot).
 
-This project demonstrates how a mid-range mobile device can be transformed into a functional development lab capable of running backend services, automation workflows, and a full IDE.
+This project demonstrates how a mobile device can be transformed into a functional development workstation capable of running backend services, automation workflows, and a full IDE.
 
 ---
 
 📌 Overview
 
-This repository showcases a lightweight-to-moderately heavy development environment designed for:
+This repository showcases a mid-weight development setup designed for:
 
 - Backend development (Node.js)
 - Workflow automation (n8n)
-- Linux-based system usage
-- Portable coding on mobile devices
-
-It also includes a small integrated system where an API service is connected with an automation workflow.
+- Linux system usage (Debian on Termux)
+- Portable coding environment (VS Code in browser)
 
 ---
 
@@ -23,21 +21,21 @@ It also includes a small integrated system where an API service is connected wit
 
 Client Request → n8n Webhook → Node.js API → Response
 
-- Node.js handles computation (calculator API)
-- n8n handles automation and orchestration
-- Debian (proot) provides the runtime environment
+- Node.js → Handles computation (Calculator API)
+- n8n → Handles automation & orchestration
+- Debian (proot) → Provides runtime environment
 
 ---
 
 ⚙️ Features
 
 - 📱 Runs on Android (No Root Required)
-- 🐧 Debian GNU/Linux environment via Termux
-- 🖥️ XFCE Desktop (VNC-based)
-- 🔁 n8n self-hosted automation workflows
+- 🐧 Debian GNU/Linux environment
+- 🖥️ XFCE Desktop via VNC
+- 🔁 n8n self-hosted automation
 - 🧑‍💻 VS Code (code-server)
-- ⚡ Node.js API development
-- 🔌 API + automation integration
+- ⚡ Node.js backend development
+- 🔌 API + Automation integration
 
 ---
 
@@ -46,23 +44,27 @@ Client Request → n8n Webhook → Node.js API → Response
 🔹 Calculator API (Node.js)
 
 - REST-based API
-- Supports basic operations (add, sub, mul, div)
-- Input validation and structured response
+- Supports: add, sub, mul, div
+- Structured JSON response
+- Input handling
+
+---
 
 🔹 n8n Workflow
 
 - Webhook-triggered automation
 - Calls local API
-- Returns processed result
+- Returns computed result
 
 ---
 
 📸 Screenshots
 
 Screenshots demonstrate:
+
 - Debian XFCE desktop running on Android
 - n8n automation workflow
-- VS Code (code-server) development environment
+- VS Code (code-server) environment
 
 ---
 
@@ -70,17 +72,17 @@ Screenshots demonstrate:
 
 This setup is not lightweight.
 
-Recommended:
+✅ Recommended:
 
-- ✅ 6 GB RAM or higher
-- ✅ 128 GB storage (or sufficient free space)
-- ✅ Mid-range to high-end Android device
+- 6 GB RAM or higher
+- Sufficient storage (10GB+ free space recommended)
+- Mid-range to high-end Android device
 
-Not Recommended:
+❌ Not Recommended:
 
-- ❌ 2 GB / 3 GB RAM devices
-- ❌ Low-end CPUs
-- ❌ Limited storage environments
+- 2 GB / 3 GB RAM devices
+- Low-end processors
+- Limited storage environments
 
 ---
 
@@ -89,7 +91,7 @@ Not Recommended:
 - No Docker support
 - No systemd
 - No GPU acceleration
-- Background processes may stop due to Android restrictions
+- Background processes may stop (Android limitation)
 - Not intended for production deployment
 
 ---
@@ -97,9 +99,9 @@ Not Recommended:
 🎯 Use Cases
 
 - Learning Linux in a practical way
-- Building automation workflows with n8n
+- Building automation workflows (n8n)
 - Developing backend APIs
-- Portable development environment for constrained systems
+- Portable development environment
 
 ---
 
@@ -116,11 +118,9 @@ smart-dev-lab/
 
 🔑 Key Takeaways
 
-This project focuses on:
-
 - System integration (API + automation)
-- Practical Linux usage
-- Development under constraints
+- Practical Linux usage on mobile
+- Development under constrained environments
 - Clean project structuring
 
 ---
@@ -129,8 +129,8 @@ This project focuses on:
 
 - VPS deployment
 - Automated setup scripts
-- Advanced workflow integrations
-- Performance optimization
+- Advanced workflows
+- Performance optimizations
 
 ---
 
