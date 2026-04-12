@@ -64,6 +64,19 @@ Client → n8n Webhook → Node.js API → Response
 
 ---
 
+# 🤖 Development Approach
+
+Parts of this project were developed with the assistance of AI tools for faster iteration and experimentation.
+
+All components were manually reviewed, understood, and integrated to ensure proper functionality and system design.
+
+The focus of this project is on:
+
+- System integration
+- Practical implementation
+- Understanding workflows and APIs
+---
+
 ## 📂 Project Structure
 
 ```
