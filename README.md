@@ -1,137 +1,157 @@
-# 🚀 Smart Dev Lab — Portable Linux Automation & Development Environment
+# 🚀 Mobile Dev Automation Lab
 
-A portable Linux-based development and automation system running on Android using Termux and Debian.
+![Platform](https://img.shields.io/badge/Platform-Android-green)
+![Linux](https://img.shields.io/badge/Linux-Debian-red)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-brightgreen)
+![Automation](https://img.shields.io/badge/Automation-n8n-blue)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-This project demonstrates how a mobile device can be transformed into a functional development lab capable of running backend services, automation workflows, and a full IDE.
+A portable Linux-based development and automation lab running on Android using Termux and Debian (proot).
+
+This project demonstrates how a mobile device can be transformed into a functional environment capable of running backend services, automation workflows, and a complete development setup.
 
 ---
 
 ## 📌 Overview
 
-This repository combines:
+This project showcases:
 
-- 🐧 Debian Linux (proot environment)
-- 🔁 n8n automation workflows
-- ⚡ Node.js backend API
-- 🧑‍💻 VS Code (code-server)
+- Running Debian Linux on Android (no root)
+- Using VS Code (code-server) for development
+- Building backend services using Node.js
+- Automating workflows with n8n
+- Integrating API systems with automation logic
 
-It also includes a simple integrated system where automation workflows interact with backend services.
+> 💡 Includes a working System Monitoring + Automation pipeline
 
 ---
 
 ## 🧠 Architecture
 
 ```
-Client → n8n Webhook → Node.js API → Response
+Cron (n8n)
+   ↓
+HTTP Request
+   ↓
+Node.js System API (/health)
+   ↓
+Condition (IF)
+   ↓
+Alert / Output
 ```
 
-### Components
+### 🔧 Components
 
-| Component | Role |
-|---|---|
-| **Node.js API** | Handles computation (logic) |
-| **n8n** | Automation & orchestration |
-| **Debian (Termux)** | Runtime environment |
-| **VS Code** | Development interface |
+- **Node.js API** → Provides system metrics
+- **n8n** → Automation + decision logic
+- **Debian (proot)** → Runtime environment
+- **XFCE (VNC)** → GUI interface
 
 ---
 
 ## ⚙️ Features
 
-- 📱 Runs on Android (No Root Required)
-- 🐧 Debian environment via Termux
-- 🖥️ XFCE Desktop (VNC-based)
-- 🔁 Self-hosted n8n workflows
-- ⚡ Node.js API service
-- 🧑‍💻 VS Code (browser-based IDE)
+- 📱 Linux environment on Android (Termux + proot)
+- 🐧 Debian-based development system
+- 🖥️ XFCE desktop via VNC
+- ⚡ Node.js backend service
+- 🔁 n8n workflow automation
+- 🧑‍💻 VS Code (code-server)
+- 🧪 API testing script (curl-based)
 - 🔗 API + automation integration
 
 ---
 
-# 🧪 Included Projects
+## 🧪 Included Projects
 
----
+### 🔹 System Health Monitor API
 
-## 🔹 System Health Monitor API (Node.js)
-
-- Exposes real-time system metrics via REST API
+- Endpoint: `GET /health`
 - Tracks:
-  - CPU load
-  - Memory usage
-  - System uptime
-- Endpoint:
-  ```
-  GET /health
-  ```
-- Returns structured JSON data for monitoring purposes
+  - CPU Load
+  - Memory Usage
+  - System Uptime
+
+### 🔹 n8n Automation Workflow
+
+- Cron-based execution
+- Periodic API polling
+- Threshold-based condition checking
+- Alert logic trigger
 
 ---
 
-## 🔹 n8n Automation Workflow
+## 📸 Proof of Implementation
 
-- Cron-based system monitoring
-- Periodically polls the API
-- Evaluates system conditions (e.g. memory usage thresholds)
-- Triggers alerts when conditions are exceeded
+This project includes a working integration of:
 
----
+- Node.js API providing live system metrics
+- n8n workflow polling and evaluating conditions
+- Debian-based development environment
 
-## 📌 Use Case
-
-This project demonstrates a simple monitoring system where:
-
-- A backend API provides live system data
-- An automation tool (n8n) continuously checks system health
-- Logic-based conditions trigger alerts when thresholds are crossed
-
-This reflects a real-world pattern used in system monitoring and DevOps environments.
-
+> ⚠️ Note: Screenshots are part of the working system but may not be included in this repository version.
 
 ---
 
-# 🤖 Development Approach
+## ⚙️ Setup Guide
 
-Parts of this project were developed with the assistance of AI tools for faster iteration and experimentation.
-
-All components were manually reviewed, understood, and integrated to ensure proper functionality and system design.
-
-The focus of this project is on:
-
-- System integration
-- Practical implementation
-- Understanding workflows and APIs
----
-
-## 📂 Project Structure
+Full setup documentation:
 
 ```
-smart-dev-lab/
-├── setup/
-├── apps/
-│   ├── calculator-api/
-│   └── n8n-workflows/
-├── scripts/
-├── screenshots/
-└── docs/
+/setup/
 ```
+
+Includes:
+
+- Termux installation
+- Debian setup (proot-distro)
+- VNC + XFCE configuration
+- Node.js + n8n setup
+- VS Code setup
+
+---
+
+## 🛠️ Scripts
+
+Located in:
+
+```
+/scripts/
+```
+
+Used for:
+
+- Starting environment
+- Stopping services
+- Running development tools
+
+---
+
+## 🧪 Testing
+
+Basic API testing:
+
+```bash
+/tests/test.sh
+```
+
+Checks API availability using curl.
 
 ---
 
 ## ⚠️ System Requirements
 
-This setup is moderately heavy and not suitable for low-end devices.
+**✅ Recommended**
 
-**Recommended:**
+- 6 GB RAM or higher
+- 5–10 GB free storage
+- Mid-range or high-end Android device
 
-- ✅ 6 GB RAM or higher
-- ✅ Mid-range to high-end device
-- ✅ Sufficient storage (5–10 GB free)
+**❌ Not Recommended**
 
-**Not Recommended:**
-
-- ❌ 2 GB / 3 GB RAM devices
-- ❌ Low-end processors
-- ❌ Limited storage environments
+- 2–3 GB RAM devices
+- Low-end CPUs
 
 ---
 
@@ -139,36 +159,70 @@ This setup is moderately heavy and not suitable for low-end devices.
 
 - No Docker support
 - No systemd
-- No GPU acceleration
-- Background services may stop due to Android constraints
-- Not intended for production deployment
+- Limited background execution (Android restrictions)
+- Not suitable for production deployment
+- Performance depends on device capabilities
 
 ---
 
 ## 🎯 Use Cases
 
-- Learning Linux in a practical environment
-- Building automation workflows with n8n
-- Developing backend APIs
+- Learning Linux in constrained environments
+- Building backend APIs
+- Automation with n8n
 - Portable development setup
+- Understanding system integration
 
 ---
 
-## 📸 Screenshots
+## 🤖 Development Approach
 
-Screenshots demonstrate:
+Parts of this project were developed using AI-assisted tools for faster iteration.
 
-- Debian XFCE desktop running on Android
-- n8n workflow execution
-- VS Code development environment
+All components were:
+
+- Manually tested
+- Verified
+- Integrated
+
+---
+
+## 📂 Project Structure
+
+```
+mobile-dev-automation-lab/
+├── setup/
+├── apps/
+├── scripts/
+├── tests/
+├── screenshots/
+└── docs/
+```
+
+---
+
+## 🔑 Key Takeaways
+
+- Demonstrates system integration (API + automation)
+- Shows practical Linux usage on mobile devices
+- Highlights development under constraints
+- Emphasizes reproducibility and documentation
 
 ---
 
 ## 🔮 Future Improvements
 
-- VPS deployment
-- Automated setup scripts
-- Advanced workflow integrations
+- 🔔 Add real alerting (Telegram / webhook)
+- 📊 Logging & data persistence
+- ⚡ Performance optimization
+- 🔐 Security enhancements
+- 🌐 Remote access setup
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐
 
 ---
 
