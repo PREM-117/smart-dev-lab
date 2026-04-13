@@ -48,19 +48,44 @@ Client → n8n Webhook → Node.js API → Response
 
 ---
 
-## 🧪 Included Projects
+# 🧪 Included Projects
 
-### 🔹 Calculator API (Node.js)
+---
 
-- REST-based endpoint
-- Supports add, subtract, multiply, divide
-- Structured JSON responses
+## 🔹 System Health Monitor API (Node.js)
 
-### 🔹 n8n Workflow
+- Exposes real-time system metrics via REST API
+- Tracks:
+  - CPU load
+  - Memory usage
+  - System uptime
+- Endpoint:
+  ```
+  GET /health
+  ```
+- Returns structured JSON data for monitoring purposes
 
-- Webhook-triggered automation
-- Calls local API
-- Returns processed result
+---
+
+## 🔹 n8n Automation Workflow
+
+- Cron-based system monitoring
+- Periodically polls the API
+- Evaluates system conditions (e.g. memory usage thresholds)
+- Triggers alerts when conditions are exceeded
+
+---
+
+## 📌 Use Case
+
+This project demonstrates a simple monitoring system where:
+
+- A backend API provides live system data
+- An automation tool (n8n) continuously checks system health
+- Logic-based conditions trigger alerts when thresholds are crossed
+
+This reflects a real-world pattern used in system monitoring and DevOps environments.
+
 
 ---
 
