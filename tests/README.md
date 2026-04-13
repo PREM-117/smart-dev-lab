@@ -42,4 +42,3 @@ chmod +x tests/test.sh
 - Quick verification of API availability
 - Helps ensure the system is running correctly
 - Useful during development and debugging
-- 
