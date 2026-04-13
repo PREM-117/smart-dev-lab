@@ -1,1 +1,97 @@
+{
+  "name": "System Monitor",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        }
+      },
+      "id": "node-cron-001",
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:3000/health",
+        "options": {}
+      },
+      "id": "node-http-002",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ parseFloat($json[\"memoryUsage\"]) }}",
+              "operation": "larger",
+              "value2": 50
+            }
+          ]
+        }
+      },
+      "id": "node-if-003",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [600, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "alert",
+              "value": "High memory usage detected"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-set-004",
+      "name": "Set Alert",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [800, 200]
+    }
+  ],
+  "connections": {
+    "Cron": {
+      "main": [
+        [{ "node": "HTTP Request", "type": "main", "index": 0 }]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [{ "node": "IF", "type": "main", "index": 0 }]
+      ]
+    },
+    "IF": {
+      "main": [
+        [{ "node": "Set Alert", "type": "main", "index": 0 }],
+        []
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "versionId": "1"
+}
 
