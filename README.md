@@ -82,6 +82,23 @@ Alert / Output
 
 ---
 
+## 📸 Screenshots
+
+### 🔁 n8n Workflow
+![n8n Workflow](screenshots/n8n-workflow.jpg)
+
+---
+
+### ⚡ API Response
+![API Response](screenshots/api-response.jpg)
+
+---
+
+### 🖥️ Development Environment
+![Dev Environment](screenshots/debian-desktop.jpg)
+
+---
+
 ## 📸 Proof of Implementation
 
 This project includes a working integration of:
